@@ -2,25 +2,33 @@ function getComputerChoice() {
     let choice = Math.random().toFixed(2);
         if (choice <= 0.3333) {
         console.log(`Rock`);
-        let shoot = `rock`;
-        return shoot;
+        let rock = `rock`;
+        return rock;
     } else if (0.3333 < choice > 0.66) {
         console.log(`Paper`);
-        let shoot = `paper`;
-        return shoot;
+        let paper = `paper`;
+        return paper;
     } else if (0.66 <= choice) {
         console.log(`Scissors`);
-        let shoot = `scissors`;
-        return shoot;
+        let scissors = `scissors`;
+        return scissors;
     }
     return console.log(choice);
 }
-
-const rock = true;
-const paper = false;
-const scissors = undefined;
-let playerSelection = prompt(`Rock, Paper, Scissors`, `Shoot`)
-
-function winLose(playerSelection, getComputerChoice) {
-
+let playerScore = 0;
+let computerScore = 0;
+let playerSelection = prompt(`Rock, Paper, Scissors`, `Shoot`).toLowerCase();
+const computerSelection = getComputerChoice();
+console.log(playerSelection, computerSelection)
+function winLose(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        console.log(`Tie!`);
+    } else if (playerSelection == rock) {
+        if (computerSelection == paper)
+        console.log(`Computer Won!`);
+        computerScore++;
+    } else {
+        playerScore++;
+    }
 }
+
