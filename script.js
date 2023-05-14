@@ -23,7 +23,8 @@ console.log(playerSelection, computerSelection);
 function winLose() {
     if (playerSelection === computerSelection) {
         console.log(`Tie!`);
-    } else if (playerScoreSelection == `rock`) {
+        console.log(playerSelection === computerSelection);
+    } else if (playerSelection === `rock`) {
         if (computerSelection == `paper`) {
             computerScore++;
             console.log(`Computer won!`);
