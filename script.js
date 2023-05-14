@@ -17,10 +17,10 @@ function getComputerChoice() {
 }
 let playerScore = 0;
 let computerScore = 0;
-const playerSelection = prompt(`Rock, Paper, Scissors`, `Shoot`).toLowerCase();
-const computerSelection = getComputerChoice();
-console.log(playerSelection, computerSelection);
+
 function winLose() {
+    let playerSelection = prompt(`Rock, Paper, Scissors`, `Shoot`).toLowerCase();
+    let computerSelection = getComputerChoice();
     if (playerSelection === computerSelection) {
         console.log(`Tie!`);
         console.log(playerSelection === computerSelection);
@@ -50,4 +50,16 @@ function winLose() {
         }
     }
 }
-winLose();
+
+
+function game() {
+    winLose();
+    if (computerScore === 5) {
+        console.log(`Computer has won the tournament!`);
+    } else if (playerScore === 5) {
+        console.log(`You won the tournament!`);
+    } else {
+        game();
+    }
+}
+game();
