@@ -17,18 +17,36 @@ function getComputerChoice() {
 }
 let playerScore = 0;
 let computerScore = 0;
-let playerSelection = prompt(`Rock, Paper, Scissors`, `Shoot`).toLowerCase();
+const playerSelection = prompt(`Rock, Paper, Scissors`, `Shoot`).toLowerCase();
 const computerSelection = getComputerChoice();
-console.log(playerSelection, computerSelection)
-function winLose(playerSelection, computerSelection) {
+console.log(playerSelection, computerSelection);
+function winLose() {
     if (playerSelection === computerSelection) {
         console.log(`Tie!`);
-    } else if (playerSelection == rock) {
-        if (computerSelection == paper)
-        console.log(`Computer Won!`);
-        computerScore++;
-    } else {
-        playerScore++;
+    } else if (playerScoreSelection == `rock`) {
+        if (computerSelection == `paper`) {
+            computerScore++;
+            console.log(`Computer won!`);
+        } else {
+            playerScore++;
+            console.log(`You won`);
+        }
+    } else if (playerSelection == `paper`) {
+        if (computerSelection == `scissors`) {
+            computerScore++;
+            console.log(`Computer won`);
+        } else {
+            playerScore++;
+            console.log(`You won`);
+        }
+    } else if (playerSelection == `scissors`) {
+        if (computerSelection == `rock`) {
+            computerScore++;
+            console.log(`Computer won!`);
+        } else {
+            playerScore++;
+            console.log(`You won`);
+        }
     }
 }
-
+winLose();
